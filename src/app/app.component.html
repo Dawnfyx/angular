@@ -1,15 +1,14 @@
-<div class="wrapper">
-  <app-header></app-header>
+<!--The content below is only a placeholder and can be replaced.-->
+<h1>
+  {{ title }}!
+</h1>
 
-  <app-menu></app-menu>
+ <a [routerLink]="['/']">主页</a> &nbsp;
+ <a [routerLink]="['/stock', 1]">股票详情</a>&nbsp;
+ <input type="button" value="股票详情" (click)="toStockDetail()">
 
-  <app-content></app-content>
+<a [routerLink]="[{outlets: {aux: 'consult'}}]">开始咨询</a>
+<a [routerLink]="[{outlets: {aux: null}}]">结束咨询</a>
 
-  {{title}}
-
-  <app-footer></app-footer>
-
-  <app-sidebar></app-sidebar>
-
-</div>
-<!-- ./wrapper -->
+<router-outlet></router-outlet>
+<router-outlet name="aux"></router-outlet>

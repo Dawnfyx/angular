@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "secondApp": {
+    "router": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/secondApp",
+            "outputPath": "dist/router",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -23,16 +23,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "node_modules/admin-lte/dist/css/AdminLTE.css",
-              "node_modules/admin-lte/dist/css/skins/skin-blue.min.css"
+              "src/styles.css"
             ],
-            "scripts": [
-              "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/bootstrap/dist/js/bootstrap.min.js",
-              "node_modules/admin-lte/dist/js/adminlte.min.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -64,18 +57,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "secondApp:build"
+            "browserTarget": "router:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "secondApp:build:production"
+              "browserTarget": "router:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "secondApp:build"
+            "browserTarget": "router:build"
           }
         },
         "test": {
@@ -109,7 +102,7 @@
         }
       }
     },
-    "secondApp-e2e": {
+    "router-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -118,11 +111,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "secondApp:serve"
+            "devServerTarget": "router:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "secondApp:serve:production"
+              "devServerTarget": "router:serve:production"
             }
           }
         },
@@ -138,5 +131,5 @@
       }
     }
   },
-  "defaultProject": "secondApp"
+  "defaultProject": "router"
 }
