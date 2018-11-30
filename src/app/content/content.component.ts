@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavigationEnd, Router} from '@angular/router';
+import {NavigationEnd, Router} from '@angular/router';
 import { filter} from 'rxjs/operators';
 
 @Component({
@@ -12,9 +12,11 @@ export class ContentComponent implements OnInit {
   pageTitle = '';
   pageDesc = '';
 
+  //构造器
   constructor(public  router: Router) {
     this.router.events.pipe(
       filter((event: Event) => event instanceof NavigationEnd)
+    // subscribe错误目前不知道怎么解决
     ).subscribe((event: NavigationEnd) => {
       if (event.url === '/dashboard') {
         this.pageTitle = '这里是首页';
