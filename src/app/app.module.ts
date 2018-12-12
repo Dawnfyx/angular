@@ -10,10 +10,11 @@ import { StockManageComponent } from './stock/stock-manage/stock-manage.componen
 import { StarsComponent } from './stars/stars.component';
 import { RouterModule, Routes} from '@angular/router';
 import { StockFormComponent } from './stock/stock-form/stock-form.component';
-import { FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpModule} from '@angular/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import {StockService} from './stock/stock.service';
+import { StockFilerPipe } from './stock/stock-filer.pipe';
 
 const routeConfig: Routes = [
   {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
@@ -33,12 +34,14 @@ const routeConfig: Routes = [
     StockManageComponent,
     StarsComponent,
     StockFormComponent,
-    DashboardComponent
+    DashboardComponent,
+    StockFilerPipe
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(routeConfig)
   ],
   providers: [StockService],

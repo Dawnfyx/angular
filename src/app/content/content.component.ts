@@ -17,15 +17,21 @@ export class ContentComponent implements OnInit {
     this.router.events.pipe(
       filter((event: Event) => event instanceof NavigationEnd)
     // subscribe错误目前不知道怎么解决
-    ).subscribe((event: NavigationEnd) => {
-      if (event.url === '/dashboard') {
-        this.pageTitle = '这里是首页';
-        this.pageDesc = '';
-      } else if (event.url.startsWith('/stock')) {
-        this.pageTitle = '股票信息管理';
-        this.pageDesc = '进行股票信息基本增删改查';
-      }
-    });
+    ).subscribe(
+      (event: NavigationEnd) => {
+          console.log('event==' + event)
+          if(event.url === '/dashboard'){
+            this.pageTitle = '这里是首页';
+            this.pageDesc = '';
+          } else if (event.url.startsWith('/stock')) {
+            this.pageTitle = '股票信息管理';
+            this.pageDesc = '进行股票信息基本增删改查';
+          }
+        },
+        error => console.log('error==' + error),
+        () => console.log('subscribe结束了')
+      )
+    );
   }
 
   ngOnInit() {
