@@ -13,9 +13,9 @@ import { DashboardComponent } from './page/dashboard/dashboard.component';
 import { ContractComponent } from './page/contract/contract.component';
 import { UserComponent } from './page/user/user.component';
 import { PageFilterPipe } from './page/page-filter.pipe';
-import {PageServiceService} from './page/page-service.service';
+import { PageServiceService} from './page/page-service.service';
 import { ContractFromComponent } from './page/contract-from/contract-from.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 // 路由
 const routeConfig: Routes = [
@@ -43,6 +43,7 @@ const routeConfig: Routes = [
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routeConfig)
   ],
