@@ -1,50 +1,52 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { MenuComponent } from './menu/menu.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
-import { FooterComponent } from './footer/footer.component';
+import { MenuComponent } from './menu/menu.component';
 import { ContentComponent } from './content/content.component';
-import { StockManageComponent } from './stock/stock-manage/stock-manage.component';
-import { StarsComponent } from './stars/stars.component';
+import { FooterComponent } from './footer/footer.component';
 import { RouterModule, Routes} from '@angular/router';
-import { StockFormComponent } from './stock/stock-form/stock-form.component';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { HttpModule} from '@angular/http';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import {StockService} from './stock/stock.service';
-import { StockFilerPipe } from './stock/stock-filer.pipe';
+import { DashboardComponent } from './page/dashboard/dashboard.component';
+import { ContractComponent } from './page/contract/contract.component';
+import { UserComponent } from './page/user/user.component';
+import { PageFilterPipe } from './page/page-filter.pipe';
+import {PageServiceService} from './page/page-service.service';
+import { ContractFromComponent } from './page/contract-from/contract-from.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
+// 路由
 const routeConfig: Routes = [
   {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
   {path: 'dashboard', component: DashboardComponent},
-  {path: 'stock', component: StockManageComponent},
-  {path: 'stock/:id', component: StockFormComponent}
+  {path: 'contract', component: ContractComponent},
+  {path: 'contract/:id', component: ContractFromComponent},
+  {path: 'user', component: UserComponent}
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    MenuComponent,
     SidebarComponent,
+    MenuComponent,
     FooterComponent,
-    ContentComponent,
-    StockManageComponent,
-    StarsComponent,
-    StockFormComponent,
     DashboardComponent,
-    StockFilerPipe
+    ContentComponent,
+    ContractComponent,
+    ContractFromComponent,
+    UserComponent,
+    PageFilterPipe
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    HttpModule,
+    AppRoutingModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routeConfig)
   ],
-  providers: [StockService],
+  providers: [PageServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
