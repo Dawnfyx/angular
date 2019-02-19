@@ -1,0 +1,140 @@
+<div class="box box-info">
+  <div class="box-header with-border">
+    <h3 class="box-title">合同信息</h3>
+  </div>
+  <!-- /.box-header -->
+  <!-- form start -->
+  <form #myForm="ngForm" class="form-horizontal" (ngSubmit)="createUser(myForm.value)">
+    <div class="box-body">
+      <div class="form-group">
+        <label for="ctid" class="col-sm-2 control-label">合同ID</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="ctid" placeholder="{{contract.id}}">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="ctcompany" class="col-sm-2 control-label">合同公司</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="ctcompany" placeholder="{{contract.company}}">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="ctperMain" class="col-sm-2 control-label">合同负责人</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="ctperMain" placeholder="{{contract.perMain}}">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="cttpyContract" class="col-sm-2 control-label">合同类型</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="cttpyContract" placeholder="{{contract.tpyContract}}">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="ctnumContract" class="col-sm-2 control-label">合同编号</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="ctnumContract" placeholder="{{contract.numContract}}">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="ctnamClient" class="col-sm-2 control-label">客户名称</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="ctnamClient" placeholder="{{contract.namClient}}">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="ctnamProject" class="col-sm-2 control-label">项目名称</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="ctnamProject" placeholder="{{contract.namProject}}">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="ctmonAll" class="col-sm-2 control-label">总金额</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="ctmonAll" placeholder="{{contract.monAll}}">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="ctmonReceipt" class="col-sm-2 control-label">已收款</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="ctmonReceipt" placeholder="{{contract.monReceipt}}">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="ctmonEnd" class="col-sm-2 control-label">尾款</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="ctmonEnd" placeholder="{{contract.monEnd}}">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="cttpyReceipt" class="col-sm-2 control-label">付款方式</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="cttpyReceipt" placeholder="{{contract.tpyReceipt}}">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="ctinvStatus" class="col-sm-2 control-label">开票情况</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="ctinvStatus" placeholder="{{contract.invStatus}}">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="ctinvTime" class="col-sm-2 control-label">开票时间</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="ctinvTime" placeholder="{{contract.invTime}}">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="ctmonTransferMore" class="col-sm-2 control-label">转账明细</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="ctmonTransferMore" placeholder="{{contract.monTransferMore}}">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="cttexContract" class="col-sm-2 control-label">合同</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="cttexContract" placeholder="{{contract.texContract}}">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="ctdatExpiration" class="col-sm-2 control-label">质保期</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="ctdatExpiration" placeholder="{{contract.datExpiration}}">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="ctmonExpiration" class="col-sm-2 control-label">质保金</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="ctmonExpiration" placeholder="{{contract.monExpiration}}">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="ctdatRemain" class="col-sm-2 control-label">到期时间</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="ctdatRemain" placeholder="{{contract.datRemain}}">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="cttbeRemark" class="col-sm-2 control-label">备注</label>
+        <div class="col-sm-10">
+          <textarea class="form-control" name="" id="cttbeRemark" cols="30" rows="10">{{contract.tbeRemark}}</textarea>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="cttbeStatus" class="col-sm-2 control-label">状态</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="cttbeStatus" placeholder="{{contract.tbeStatus}}">
+        </div>
+      </div>
+    </div>
+    <!-- /.box-body -->
+    <div class="box-footer">
+      <button (click)="cancel()" type="button" class="btn btn-default">取消</button>
+      <button (click)="save()" type="submit" class="btn btn-info pull-right">保存</button>
+    </div>
+    <!-- /.box-footer -->
+  </form>
+</div>
+<div>
+  {{myForm.value | json}}
+</div>

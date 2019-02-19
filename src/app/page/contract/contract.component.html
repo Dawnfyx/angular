@@ -1,0 +1,92 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="box">
+      <div class="box-header with-border">
+        <a class="btn btn-success btn-sm" href="javascript:;" (click)="create()">
+          <span class="glyphicon glyphicon-plus"></span>&nbsp;创建
+        </a>
+        <!-- search -->
+        <div class="box-tools">
+          <div class="input-group input-group-sm" style="width: 150px; margin-top: 7px;">
+
+            <input [formControl]="nameFilter" type="text" name="table_search" class="form-control pull-right" placeholder="搜索">
+
+            <div class="input-group-btn">
+              <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+            </div>
+          </div>
+        </div>
+        <!-- /.search -->
+      </div>
+      <!-- /.box-header -->
+      <div class="box-body">
+        <table class="table table-bordered table-striped">
+          <tr>
+            <th style="width: 10px">#</th>
+            <th>ID</th>
+            <th>公司</th>
+            <th>负责人</th>
+            <th>合同类型</th>
+            <th>合同编号</th>
+            <th>客户名称</th>
+            <th>项目名称</th>
+            <th>总金额</th>
+            <th>已收款</th>
+            <th>尾款</th>
+            <th>付款方式</th>
+            <th>开票情况</th>
+            <th>开票时间</th>
+            <th>转账明细</th>
+            <th>合同</th>
+            <th>质保期</th>
+            <th>质保金</th>
+            <th>到期时间</th>
+            <th>备注</th>
+            <th>状态</th>
+            <th>操作</th>
+          </tr>
+          <tr *ngFor="let contract of contracts | async; let i = index;">
+            <td>{{i + 1}}</td>
+            <td>{{contract.id}}</td>
+            <td>{{contract.company}}</td>
+            <td>{{contract.perMain}}</td>
+            <td>{{contract.tpyContract}}</td>
+            <td>{{contract.numContract}}</td>
+            <td>{{contract.namClient}}</td>
+            <td>{{contract.namProject}}</td>
+            <td>{{contract.monAll}}</td>
+            <td>{{contract.monReceipt}}</td>
+            <td>{{contract.monEnd}}</td>
+            <td>{{contract.tpyReceipt}}</td>
+            <td>{{contract.invStatus}}</td>
+            <td>{{contract.invTime}}</td>
+            <td>{{contract.monTransferMore}}</td>
+            <td>{{contract.texContract}}</td>
+            <td>{{contract.datExpiration}}</td>
+            <td>{{contract.monExpiration}}</td>
+            <td>{{contract.datRemain}}</td>
+            <td>{{contract.tbeRemark}}</td>
+            <td>{{contract.tbeStatus}}</td>
+            <!--<td><app-stars [rating]="stock.rating"></app-stars></td>-->
+            <td>
+              <a class="btn btn-warning btn-xs" href="javascript:;" (click)="update(contract)"><span class="glyphicon glyphicon-pencil"></span>&nbsp;修改</a>&nbsp;
+              <a class="btn btn-danger btn-xs" href="javascript:;"><span class="glyphicon glyphicon-remove"></span>&nbsp;删除</a>
+            </td>
+          </tr>
+
+        </table>
+      </div>
+      <!-- /.box-body -->
+      <div class="box-footer clearfix">
+        <ul class="pagination pagination-sm no-margin pull-right">
+          <li><a href="#">&laquo;</a></li>
+          <li><a href="#">1</a></li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li><a href="#">&raquo;</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- /.box -->
+  </div>
+</div>
