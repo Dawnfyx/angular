@@ -20,13 +20,13 @@ export class ContentComponent implements OnInit {
     ).subscribe(
       (event: NavigationEnd) => {
           console.log('event==' + event)
-          if(event.url === '/dashboard'){
-            this.pageTitle = '这里是首页';
-            this.pageDesc = '';
-          } else if (event.url.startsWith('/stock')) {
-            this.pageTitle = '股票信息管理';
-            this.pageDesc = '进行股票信息基本增删改查';
-          }
+          // if(event.url === '/dashboard'){
+          //   this.pageTitle = '这里是首页';
+          //   this.pageDesc = '';
+          // } else if (event.url.startsWith('/stock')) {
+          //   this.pageTitle = '股票信息管理';
+          //   this.pageDesc = '进行股票信息基本增删改查';
+          // }
         },
         error => console.log('error==' + error),
         () => console.log('subscribe结束了')
