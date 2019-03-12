@@ -1,41 +1,41 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {HttpModule} from '@angular/http';
+import {Routes, RouterModule} from '@angular/router';
+
 import { AppComponent } from './app.component';
+import { ContentComponent } from './content/content.component';
+import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { MenuComponent } from './menu/menu.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
-import { FooterComponent } from './footer/footer.component';
-import { ContentComponent } from './content/content.component';
-import { StockManageComponent } from './stock/stock-manage/stock-manage.component';
-import { StarsComponent } from './stars/stars.component';
-import { RouterModule, Routes} from '@angular/router';
-import { StockFormComponent } from './stock/stock-form/stock-form.component';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { HttpModule} from '@angular/http';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import {StockService} from './stock/stock.service';
-import { StockFilerPipe } from './stock/stock-filer.pipe';
+import { ContractListComponent } from './page/contract-list/contract-list.component';
+import { ContractFormComponent } from './page/contract-form/contract-form.component';
+import { UserComponent } from './page/user/user.component';
+import { DashboardComponent } from './page/dashboard/dashboard.component';
+import { ContractService} from './page/contract.service';
 
 const routeConfig: Routes = [
   {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
   {path: 'dashboard', component: DashboardComponent},
-  {path: 'stock', component: StockManageComponent},
-  {path: 'stock/:id', component: StockFormComponent}
+  {path: 'contract', component: ContractListComponent},
+  {path: 'contract/:id', component: ContractFormComponent},
+  {path: 'user', component: UserComponent}
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
+    ContentComponent,
+    FooterComponent,
     HeaderComponent,
     MenuComponent,
     SidebarComponent,
-    FooterComponent,
-    ContentComponent,
-    StockManageComponent,
-    StarsComponent,
-    StockFormComponent,
+    UserComponent,
     DashboardComponent,
-    StockFilerPipe
+    ContractListComponent,
+    ContractFormComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +44,7 @@ const routeConfig: Routes = [
     ReactiveFormsModule,
     RouterModule.forRoot(routeConfig)
   ],
-  providers: [StockService],
+  providers: [ContractService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

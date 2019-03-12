@@ -1,12 +1,12 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import {Pipe, PipeTransform} from '@angular/core';
 
 @Pipe({
-  name: 'stockFiler'
+  name: 'pageFilter'
 })
-export class StockFilerPipe implements PipeTransform {
+export class PageFilterPipe implements PipeTransform {
 
   transform(list: any[], field: string, keyword: string): any {
-    if(!field || !keyword){
+    if (!field || !keyword) {
       return list;
     }
     return list.filter(item => {
