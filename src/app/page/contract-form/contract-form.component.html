@@ -1,0 +1,240 @@
+<div class="box box-info">
+  <div class="box-header with-border">
+    <h3 class="box-title">合同信息</h3>
+  </div>
+  <!-- /.box-header -->
+  <!--<div>{{contract | json}}</div>-->
+  <!-- form start -->
+  <form [formGroup]="formModel" class="form-horizontal">
+    <div class="box-body">
+      <div class="form-group">
+        <label class="col-sm-2 control-label">合同ID</label>
+        <div class="col-sm-7">
+          <input [class.hasError]="formModel.get('id').invalid && formModel.get('id').touched" type="number" class="form-control" formControlName="id" value="{{contract.id}}">
+        </div>
+        <div class="col-sm-3">
+          <div [hidden]="formModel.get('id').valid || formModel.get('id').untouched">
+            <div [hidden]="!formModel.hasError('required','id')">
+              合同ID是必填项
+            </div>
+            <div [hidden]="!formModel.hasError('minlength','id')">
+              合同ID最小长度是2
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">合同公司</label>
+        <div class="col-sm-7">
+          <input type="text" class="form-control" formControlName="company" value="{{contract.company}}" >
+        </div>
+        <div class="col-sm-3">
+          <div [hidden]="formModel.get('company').valid || formModel.get('company').untouched">
+            <div [hidden]="!formModel.hasError('required','company')">
+              合同公司是必填项
+            </div>
+            <div [hidden]="!formModel.hasError('minlength','company')">
+              合同公司最小长度是6
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">合同负责人</label>
+        <div class="col-sm-7">
+          <input type="text" class="form-control" formControlName="perMain" value="{{contract.perMain}}">
+        </div>
+        <div class="col-sm-3">
+          <div [hidden]="formModel.get('perMain').valid || formModel.get('perMain').untouched">
+            <div [hidden]="!formModel.hasError('required','perMain')">
+              合同负责人是必填项
+            </div>
+            <div [hidden]="!formModel.hasError('minlength','perMain')">
+              合同负责人最小长度是6
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">合同类型</label>
+        <div class="col-sm-7">
+          <input type="text" class="form-control" formControlName="tpyContract" value="{{contract.tpyContract}}">
+        </div>
+        <div class="col-sm-3">
+          <div [hidden]="formModel.get('tpyContract').valid || formModel.get('tpyContract').untouched">
+            <div [hidden]="!formModel.hasError('required','tpyContract')">
+              合同类型是必填项
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">合同编号</label>
+        <div class="col-sm-7">
+          <input type="text" class="form-control" formControlName="numContract" value="{{contract.numContract}}">
+        </div>
+        <div class="col-sm-3">
+          <div [hidden]="formModel.get('numContract').valid || formModel.get('numContract').untouched">
+            <div [hidden]="!formModel.hasError('required','numContract')">
+              合同编号是必填项
+            </div>
+            <div [hidden]="!formModel.hasError('minlength','numContract')">
+              合同编号最小长度是6
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">客户名称</label>
+        <div class="col-sm-7">
+          <input type="text" class="form-control" formControlName="namClient" value="{{contract.namClient}}">
+        </div>
+        <div class="col-sm-3">
+          <div [hidden]="formModel.get('namClient').valid || formModel.get('namClient').untouched">
+            <div [hidden]="!formModel.hasError('required','namClient')">
+              客户名称是必填项
+            </div>
+            <div [hidden]="!formModel.hasError('minlength','namClient')">
+              客户名称最小长度是2
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">项目名称</label>
+        <div class="col-sm-7">
+          <input type="text" class="form-control" formControlName="namProject" value="{{contract.namProject}}">
+        </div>
+        <div class="col-sm-3">
+          <div [hidden]="formModel.get('namProject').valid || formModel.get('namProject').untouched">
+            <div [hidden]="!formModel.hasError('required','namProject')">
+              项目名称是必填项
+            </div>
+            <div [hidden]="!formModel.hasError('minlength','namProject')">
+              项目名称最小长度是6
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">总金额</label>
+        <div class="col-sm-7">
+          <input type="number" class="form-control" formControlName="monAll" value="{{contract.monAll}}">
+        </div>
+        <div class="col-sm-3">
+          <div [hidden]="formModel.get('monAll').valid || formModel.get('monAll').untouched">
+            <div [hidden]="!formModel.hasError('required','monAll')">
+              总金额是必填项
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">已收款</label>
+        <div class="col-sm-7">
+          <input type="text" class="form-control" formControlName="monReceipt" value="{{contract.monReceipt}}">
+        </div>
+        <div class="col-sm-3">
+        </div>
+      </div>
+      <div class="form-group">
+        <label  class="col-sm-2 control-label">尾款</label>
+        <div class="col-sm-7">
+          <input type="text" class="form-control" formControlName="monEnd" value="{{contract.monEnd}}">
+        </div>
+        <div class="col-sm-3"></div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">付款方式</label>
+        <div class="col-sm-7">
+          <input type="text" class="form-control" formControlName="tpyReceipt" value="{{contract.tpyReceipt}}">
+        </div>
+        <div class="col-sm-3"></div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">开票情况</label>
+        <div class="col-sm-7">
+          <input type="text" class="form-control" formControlName="invStatus" value="{{contract.invStatus}}">
+        </div>
+        <div class="col-sm-3"></div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">开票时间</label>
+        <div class="col-sm-7">
+          <input type="text" class="form-control" formControlName="invTime" value="{{contract.invTime}}">
+        </div>
+        <div class="col-sm-3"></div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">转账明细</label>
+        <div class="col-sm-7">
+          <input type="text" class="form-control" formControlName="monTransferMore" value="{{contract.monTransferMore}}">
+        </div>
+        <div class="col-sm-3"></div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">合同</label>
+        <div class="col-sm-7">
+          <input type="text" class="form-control" formControlName="texContract" value="{{contract.texContract}}">
+        </div>
+        <div class="col-sm-3">
+          <div [hidden]="formModel.get('texContract').valid || formModel.get('texContract').untouched">
+            <div [hidden]="!formModel.hasError('required','texContract')">
+              合同是必填项
+            </div>
+            <div [hidden]="!formModel.hasError('minlength','texContract')">
+              合同最小长度是6
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">质保期</label>
+        <div class="col-sm-7">
+          <input type="text" class="form-control" formControlName="datExpiration" value="{{contract.datExpiration}}">
+        </div>
+        <div class="col-sm-3"></div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">质保金</label>
+        <div class="col-sm-7">
+          <input type="text" class="form-control" formControlName="monExpiration" value="{{contract.monExpiration}}">
+        </div>
+        <div class="col-sm-3"></div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">到期时间</label>
+        <div class="col-sm-7">
+          <input type="text" class="form-control" formControlName="datRemain" value="{{contract.datRemain}}">
+        </div>
+        <div class="col-sm-3"></div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">备注</label>
+        <div class="col-sm-7">
+          <textarea class="form-control" name="" formControlName="tbeRemark" cols="30" rows="10">{{contract.tbeRemark}}</textarea>
+        </div>
+        <div class="col-sm-3"></div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">状态</label>
+        <div class="col-sm-7">
+          <input type="text" class="form-control" formControlName="tbeStatus" value="{{contract.tbeStatus}}">
+        </div>
+        <div class="col-sm-3">
+          <div [hidden]="formModel.get('tbeStatus').valid || formModel.get('tbeStatus').untouched">
+            <div [hidden]="!formModel.hasError('required','tbeStatus')">
+              状态是必填项
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.box-body -->
+    <div class="box-footer">
+      <button (click)="cancel()" type="button" class="btn btn-default">取消</button>
+      <button (click)="save()" type="submit" class="btn btn-info pull-right">保存</button>
+    </div>
+    <!-- /.box-footer -->
+  </form>
+</div>
